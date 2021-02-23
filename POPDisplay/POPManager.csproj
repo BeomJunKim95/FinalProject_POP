@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5E0045C5-D968-4719-85D9-91D362B4D6D6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>POPDisplay</RootNamespace>
+    <AssemblyName>POPDisplay</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseForm\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlCustom\CustomDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlCustom\CustomDataGridView.Designer.cs">
+      <DependentUpon>CustomDataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlUser\ProcessInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlUser\ProcessInfo.Designer.cs">
+      <DependentUpon>ProcessInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlUser\RadioBtn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlUser\RadioBtn.Designer.cs">
+      <DependentUpon>RadioBtn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlUser\UC_WareHouseInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlUser\UC_WareHouseInfo.Designer.cs">
+      <DependentUpon>UC_WareHouseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Global.cs" />
+    <Compile Include="MainForm\FacilityInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\FacilityInfo.Designer.cs">
+      <DependentUpon>FacilityInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\frmPLCTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\frmPLCTask.Designer.cs">
+      <DependentUpon>frmPLCTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\ProcessDetailInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\ProcessDetailInfo.Designer.cs">
+      <DependentUpon>ProcessDetailInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\ProductCheckInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\ProductCheckInfo.Designer.cs">
+      <DependentUpon>ProductCheckInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\WorkOrderInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\WorkOrderInfo.Designer.cs">
+      <DependentUpon>WorkOrderInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\WorkRecordPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\WorkRecordPopUp.Designer.cs">
+      <DependentUpon>WorkRecordPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDI\MDIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDI\MDIForm.Designer.cs">
+      <DependentUpon>MDIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\AsyncSocket.cs" />
+    <Compile Include="Util\AsyncSocketClient.cs" />
+    <Compile Include="Util\AsyncSocketServer.cs" />
+    <Compile Include="Util\CommonUtil.cs" />
+    <Compile Include="Util\ExtenstionMethod.cs" />
+    <Compile Include="Util\LoggingUtility.cs" />
+    <Compile Include="Util\ServiceHelp.cs" />
+    <Compile Include="Util\TcpControl.cs" />
+    <Compile Include="Util\ThreadPLCTask.cs" />
+    <EmbeddedResource Include="BaseForm\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlCustom\CustomDataGridView.resx">
+      <DependentUpon>CustomDataGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlUser\ProcessInfo.resx">
+      <DependentUpon>ProcessInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlUser\RadioBtn.resx">
+      <DependentUpon>RadioBtn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\FacilityInfo.resx">
+      <DependentUpon>FacilityInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\frmPLCTask.resx">
+      <DependentUpon>frmPLCTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\ProcessDetailInfo.resx">
+      <DependentUpon>ProcessDetailInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\ProductCheckInfo.resx">
+      <DependentUpon>ProductCheckInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\WorkOrderInfo.resx">
+      <DependentUpon>WorkOrderInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\WorkRecordPopUp.resx">
+      <DependentUpon>WorkRecordPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDI\MDIForm.resx">
+      <DependentUpon>MDIForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Cancel_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BelowAverage_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClearTableStyle_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditName_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExportToXLS_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Find_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FormatAsTable_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remove_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sherch_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SortAsc_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\confirmation-1152155_1280.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NoneCheck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\write-1727488_1280.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-1727486_1280.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-3160555_1280.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\milling-cutters-3191003_1920.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VO\VO.csproj">
+      <Project>{1dc4661f-1a55-4a86-a4c1-5f8a516cfe19}</Project>
+      <Name>VO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pistol_596564_1280.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pistol-596564_1280.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
